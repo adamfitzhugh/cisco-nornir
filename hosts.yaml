@@ -1,0 +1,18 @@
+---
+iol1:
+  hostname: '192.168.161.21'
+  port: 22
+  groups:
+    - 'cisco_ios'
+
+iol2:
+  hostname: '192.168.161.22'
+  port: 22
+  groups:
+    - 'cisco_ios'
+
+iol3:
+  hostname: '192.168.161.23'
+  port: 22
+  groups:
+    - 'cisco_ios'
