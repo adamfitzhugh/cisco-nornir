@@ -3,16 +3,22 @@ iol1:
   hostname: '192.168.161.21'
   port: 22
   groups:
-    - 'cisco_ios'
+    - 'cisco'
 
 iol2:
   hostname: '192.168.161.22'
   port: 22
   groups:
-    - 'cisco_ios'
+    - 'cisco'
 
 iol3:
   hostname: '192.168.161.23'
   port: 22
   groups:
-    - 'cisco_ios'
+    - 'cisco'
+
+eos1:
+  hostname: '192.168.161.30'
+  port: 22
+  groups:
+    - 'arista'
