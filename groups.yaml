@@ -1,5 +1,5 @@
 ---
-cisco_ios:
+cisco:
   platform: 'cisco_ios'
   
 arista:
