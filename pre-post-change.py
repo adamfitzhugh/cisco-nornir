@@ -13,33 +13,36 @@ def check_commands(task):
     
     #Run the following check commands
     commands = [
-        "term len 0"
-        "show version"
-        "show running-config"
-        "show log"
-        "show interface status"
-        "show interface description"
-        "show interface trunk"
-        "show port-channel summary "
-        "show vlan"
-        "show spanning-tree topology status"
-        "show ip bgp summary"
-        "show ip route summary"
-        "show ip route"
+        "show version",
+        "show running-config",
+        "show log",
+        "show interface status",
+        "show interface description",
+        "show interface trunk",
+        "show port-channel summary",
+        "show vlan",
+        "show spanning-tree topology status",
+        "show ip bgp summary",
+        "show ip route summary",
+        "show ip route",
     ]
 
-    print(f"Pre/post checks from (task.host)")
+    print(f"Pre/post checks from {task.host}")
 
-    #Create for loop to loop over the commands
+    #Loop over the above commands
     for cmd in commands:
-        #Run the command against the device and store it in out
+        #Send the commands to the device and return to out
         out = task.run(task=netmiko_send_command, command_string=cmd)
-        #Save the output
+        #Save the output with the current date and time
         ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        task.host["info"]="\n"+2+"#"+40+"\n"+cmd" : "+ts+"\n"+"#"+40+"\n"+2+out.result 
-
-        #Create output files
-        task.run(task=files.write_file,filename=f"output/{task.host}_change_checks.txt",content=task.host["info"],append=True)
+        task.host["info"]="\n"*4+"#"*80+"\n"+cmd+" : "+ts+"\n"+"#"*80+"\n"*4+out.result
+        #Create the text file
+        task.run(
+            task=files.write_file,
+            filename=f"{task.host}_device_checks.txt",
+            content=task.host["info"],
+            append=True
+        )
 
 def main():
     #Initialise Nornir
@@ -48,14 +51,6 @@ def main():
     n = n.filter(platform="arista_eos")
     #Run the check_commands function
     n.run(task=check_commands)
-
-    #Open the pre and post change text files and store them in a variable called diff
-    with open("output/{task.host}_pre_change_checks.txt") as pre_check_file, open("output/{task.host}_post_change_checks.txt"):
-        diff = difflib.ndiff(pre_check_file.readlines(), post_check_file.readlines())
-    #Loop over the documents and store the changes in the below text file
-    with open ("post_change_diff.txt", "w") as result:
-        for output in diff:
-            result.write(output)
 
 if __name__== "__main__":
     main()

@@ -1,24 +1,12 @@
 ---
-iol1:
-  hostname: '192.168.161.21'
+vEOS1:
+  hostname: '192.168.161.10'
   port: 22
   groups:
-    - 'cisco'
+    - 'arista'
 
-iol2:
-  hostname: '192.168.161.22'
-  port: 22
-  groups:
-    - 'cisco'
-
-iol3:
-  hostname: '192.168.161.23'
-  port: 22
-  groups:
-    - 'cisco'
-
-eos1:
-  hostname: '192.168.161.30'
+vEOS3:
+  hostname: '192.168.161.12'
   port: 22
   groups:
     - 'arista'

@@ -1,6 +1,17 @@
 ---
 cisco:
   platform: 'cisco_ios'
+  connection_options:
+    netmiko:
+      platform: cisco_ios
+      extras: {}
+    napalm:
+      platform: ios_ssh
+      port: 22
   
 arista:
   platform: 'arista_eos'
+  connection_options:
+    netmiko:
+      platform: arista_eos
+      extras: {}

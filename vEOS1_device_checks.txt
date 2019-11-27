@@ -1,0 +1,348 @@
+
+
+
+
+################################################################################
+show version : 2019-11-27 20:28:25
+################################################################################
+
+
+
+Arista vEOS
+Hardware version:    
+Serial number:       
+System MAC address:  5000.00d7.ee0b
+
+Software image version: 4.21.1.1F
+Architecture:           i386
+Internal build version: 4.21.1.1F-10146868.42111F
+Internal build ID:      ed3973a9-79db-4acc-b9ac-19b9622d23e2
+
+Uptime:                 0 weeks, 0 days, 1 hours and 2 minutes
+Total memory:           2016668 kB
+Free memory:            1382688 kB
+
+
+
+
+################################################################################
+show running-config : 2019-11-27 20:28:26
+################################################################################
+
+
+
+% Invalid input (privileged mode required)
+
+
+
+################################################################################
+show log : 2019-11-27 20:28:27
+################################################################################
+
+
+
+Syslog logging: enabled
+    Buffer logging: level debugging
+    Console logging: level errors
+    Monitor logging: level errors
+    Synchronous logging: disabled
+    Trap logging: level informational
+    Sequence numbers: disabled
+    Syslog facility: local4
+    Hostname format: Hostname only
+    Repeat logging interval: disabled
+    Repeat messages: disabled
+
+Facility                   Severity            Effective Severity
+--------------------       -------------       ------------------
+aaa                        debugging           debugging    
+accounting                 debugging           debugging    
+acl                        debugging           debugging    
+agent                      debugging           debugging    
+ale                        debugging           debugging    
+arp                        debugging           debugging    
+bfd                        debugging           debugging    
+bgp                        debugging           debugging    
+bmp                        debugging           debugging    
+capacity                   debugging           debugging    
+capi                       debugging           debugging    
+clear                      debugging           debugging    
+crt                        debugging           debugging    
+cvx                        debugging           debugging    
+dataplane                  debugging           debugging    
+dhcp                       debugging           debugging    
+dot1x                      debugging           debugging    
+dscp                       debugging           debugging    
+envmon                     debugging           debugging    
+eth                        debugging           debugging    
+eventmon                   debugging           debugging    
+extension                  debugging           debugging    
+fhrp                       debugging           debugging    
+flow                       debugging           debugging    
+forwarding                 debugging           debugging    
+fru                        debugging           debugging    
+fwk                        debugging           debugging    
+gmp                        debugging           debugging    
+hardware                   debugging           debugging    
+health                     debugging           debugging    
+httpservice                debugging           debugging    
+igmp                       debugging           debugging    
+igmpsnooping               debugging           debugging    
+intf                       debugging           debugging    
+ip6routing                 debugging           debugging    
+iprib                      debugging           debugging    
+ira                        debugging           debugging    
+isis                       debugging           debugging    
+kernelfib                  debugging           debugging    
+lacp                       debugging           debugging    
+lag                        debugging           debugging    
+launcher                   debugging           debugging    
+ldp                        debugging           debugging    
+license                    debugging           debugging    
+lineproto                  debugging           debugging    
+lldp                       debugging           debugging    
+logmgr                     debugging           debugging    
+loopback                   debugging           debugging    
+loopprotect                debugging           debugging    
+mapreducemonitor           debugging           debugging    
+mirroring                  debugging           debugging    
+mka                        debugging           debugging    
+mlag                       debugging           debugging    
+mmode                      debugging           debugging    
+mroute                     debugging           debugging    
+mrp                        debugging           debugging    
+msdp                       debugging           debugging    
+msrp                       debugging           debugging    
+msspolicymonitor           debugging           debugging    
+mvrp                       debugging           debugging    
+nat                        debugging           debugging    
+openconfig                 debugging           debugging    
+openflow                   debugging           debugging    
+ospf                       debugging           debugging    
+ospf3                      debugging           debugging    
+package                    debugging           debugging    
+pfc                        debugging           debugging    
+pimbsr                     debugging           debugging    
+portsecurity               debugging           debugging    
+ptp                        debugging           debugging    
+pwrmgmt                    debugging           debugging    
+qos                        debugging           debugging    
+queuemonitor               debugging           debugging    
+reachabilitymonitor        debugging           debugging    
+redundancy                 debugging           debugging    
+rib                        debugging           debugging    
+routing                    debugging           debugging    
+security                   debugging           debugging    
+servermonitor              debugging           debugging    
+spantree                   debugging           debugging    
+stagemgr                   debugging           debugging    
+sys                        debugging           debugging    
+sysdb                      debugging           debugging    
+tapagg                     debugging           debugging    
+tcp                        debugging           debugging    
+transceiver                debugging           debugging    
+tunnel                     debugging           debugging    
+tunnelintf                 debugging           debugging    
+vmtracersess               debugging           debugging    
+vmwarevi                   debugging           debugging    
+vmwarevs                   debugging           debugging    
+vrf                        debugging           debugging    
+vrrp                       debugging           debugging    
+vxlan                      debugging           debugging    
+xmpp                       debugging           debugging    
+ztp                        debugging           debugging    
+
+Log Buffer:
+Nov 27 19:28:05 localhost Rib: Commence routing updates
+Nov 27 19:28:07 localhost Rib: %RIB-5-IGP_CONVERGED: IGP protocols in VRF default have converged and their routes are in FIB
+Nov 27 19:28:07 localhost Rib: %RIB-5-ROUTE_READY: Routes in VRF default are ready and available in FIB
+Nov 27 19:28:14 localhost ConfigAgent: %SYS-5-CONFIG_E: Enter configuration mode from console by admin on con0 (0.0.0.0)
+Nov 27 19:28:19 vEOS1 Stp: %SPANTREE-6-INTERFACE_STATE: Interface Ethernet2 instance MST0 moving from discarding to learning
+Nov 27 19:28:19 vEOS1 Stp: %SPANTREE-6-INTERFACE_STATE: Interface Ethernet1 instance MST0 moving from discarding to learning
+Nov 27 19:28:19 vEOS1 Stp: %SPANTREE-6-INTERFACE_STATE: Interface Ethernet2 instance MST0 moving from learning to forwarding
+Nov 27 19:28:19 vEOS1 Stp: %SPANTREE-6-INTERFACE_STATE: Interface Ethernet3 instance MST0 moving from discarding to learning (message repeated 1 times in 0.244015 secs)
+Nov 27 19:28:19 vEOS1 Stp: %SPANTREE-6-INTERFACE_STATE: Interface Ethernet3 instance MST0 moving from learning to forwarding
+Nov 27 19:28:20 vEOS1 ConfigAgent: %SYS-5-CONFIG_STARTUP: Startup config saved from system:/running-config by admin on con0 (0.0.0.0).
+Nov 27 19:28:49 vEOS1 Stp: %SPANTREE-6-STABLE_CHANGE: Stp state is now stable
+Nov 27 19:29:06 vEOS1 ConfigAgent: %SYS-5-CONFIG_I: Configured from console by admin on con0 (0.0.0.0)
+Nov 27 19:29:08 vEOS1 ConfigAgent: %SYS-5-CONFIG_STARTUP: Startup config saved from system:/running-config by admin on con0 (0.0.0.0).
+Nov 27 19:29:41 vEOS1 ConfigAgent: %SYS-5-CONFIG_E: Enter configuration mode from console by admin on con0 (0.0.0.0)
+Nov 27 19:30:18 vEOS1 SuperServer: %SYS-5-SYSTEM_RESTARTED: System restarted
+Nov 27 19:30:26 vEOS1 ConfigAgent: %SYS-5-CONFIG_I: Configured from console by admin on con0 (0.0.0.0)
+Nov 27 19:30:42 vEOS1 ConfigAgent: %SYS-5-CONFIG_E: Enter configuration mode from console by admin on con0 (0.0.0.0)
+Nov 27 19:31:19 vEOS1 ConfigAgent: %SYS-5-CONFIG_I: Configured from console by admin on con0 (0.0.0.0)
+Nov 27 19:31:22 vEOS1 ConfigAgent: %SYS-5-CONFIG_STARTUP: Startup config saved from system:/running-config by admin on con0 (0.0.0.0).
+Nov 27 19:32:00 vEOS1 ConfigAgent: %SYS-5-CONFIG_E: Enter configuration mode from console by admin on con0 (0.0.0.0)
+Nov 27 19:33:09 vEOS1 ConfigAgent: %SYS-5-CONFIG_I: Configured from console by admin on con0 (0.0.0.0)
+Nov 27 20:19:23 vEOS1 Lldp: %LLDP-5-NEIGHBOR_NEW: LLDP neighbor with chassisId 5000.00d5.5dc0 and portId "Ethernet2" added on interface Ethernet2
+Nov 27 20:24:43 vEOS1 Lldp: %LLDP-5-NEIGHBOR_TIMEOUT: LLDP neighbor with chassisId 5000.00d5.5dc0 and portId "Ethernet2" timed out on interface Ethernet2
+Nov 27 20:25:47 vEOS1 Stp: %SPANTREE-6-STABLE_CHANGE: Stp state is now not stable
+Nov 27 20:25:47 vEOS1 Stp: %SPANTREE-6-ROOTCHANGE: Root changed for instance MST0: new root interface is Ethernet2, new root bridge mac address is 50:00:00:d5:5d:c0
+Nov 27 20:25:48 vEOS1 Lldp: %LLDP-5-NEIGHBOR_NEW: LLDP neighbor with chassisId 5000.00d5.5dc0 and portId "Ethernet2" added on interface Ethernet2
+Nov 27 20:26:21 vEOS1 Stp: %SPANTREE-6-STABLE_CHANGE: Stp state is now stable
+
+
+
+################################################################################
+show interface status : 2019-11-27 20:28:27
+################################################################################
+
+
+
+Port       Name   Status       Vlan     Duplex Speed  Type            Flags Encapsulation
+Et1               connected    1        full   unconf EbraTestPhyPort                    
+Et2               connected    1        full   unconf EbraTestPhyPort                    
+Et3               connected    1        full   unconf EbraTestPhyPort                    
+Ma1               connected    routed   a-full a-1G   10/100/1000                        
+
+
+
+
+################################################################################
+show interface description : 2019-11-27 20:28:28
+################################################################################
+
+
+
+Interface                      Status         Protocol           Description
+Et1                            up             up                 
+Et2                            up             up                 
+Et3                            up             up                 
+Ma1                            up             up                 
+
+
+
+################################################################################
+show interface trunk : 2019-11-27 20:28:29
+################################################################################
+
+
+
+There are no active trunk ports
+
+
+
+################################################################################
+show port-channel summary : 2019-11-27 20:28:29
+################################################################################
+
+
+
+
+                  Flags                                                            
+-------------------------- ----------------------------- ------------------------- 
+   a - LACP Active            p - LACP Passive           * - static fallback       
+   F - Fallback enabled       f - Fallback configured    ^ - individual fallback   
+   U - In Use                 D - Down                                             
+   + - In-Sync                - - Out-of-Sync            i - incompatible with agg 
+   P - bundled in Po          s - suspended              G - Aggregable            
+   I - Individual             S - ShortTimeout           w - wait for agg          
+
+Number of channels in use: 0
+Number of aggregators: 0
+
+   Port-Channel       Protocol    Ports 
+------------------ -------------- ----- 
+
+
+
+
+################################################################################
+show vlan : 2019-11-27 20:28:30
+################################################################################
+
+
+
+VLAN  Name                             Status    Ports
+----- -------------------------------- --------- -------------------------------
+1     default                          active    Et1, Et2, Et3
+
+
+
+
+################################################################################
+show spanning-tree topology status : 2019-11-27 20:28:31
+################################################################################
+
+
+
+Topology: Cist
+  Mapped Vlans: 1
+  Ethernet1:            forwarding 
+  Ethernet2:            forwarding 
+  Ethernet3:            forwarding 
+
+
+
+
+
+################################################################################
+show ip bgp summary : 2019-11-27 20:28:32
+################################################################################
+
+
+
+
+
+
+
+################################################################################
+show ip route summary : 2019-11-27 20:28:33
+################################################################################
+
+
+
+
+VRF: default
+   Route Source                                Number Of Routes 
+------------------------------------- ------------------------- 
+   connected                                                  1 
+   static (persistent)                                        0 
+   static (non-persistent)                                    0 
+   VXLAN Control Service                                      0 
+   static nexthop-group                                       0 
+   ospf                                                       0 
+     Intra-area: 0 Inter-area: 0 External-1: 0 External-2: 0    
+     NSSA External-1: 0 NSSA External-2: 0                      
+   ospfv3                                                     0 
+   bgp                                                        0 
+     External: 0 Internal: 0                                    
+   isis                                                       0 
+     Level-1: 0 Level-2: 0                                      
+   rip                                                        0 
+   internal                                                   6 
+   attached                                                   0 
+   aggregate                                                  0 
+   dynamic policy                                             0 
+                                                                
+   Total Routes                                               7 
+
+Number of routes per mask-length:
+   /8: 2         /24: 1        /32: 4       
+
+
+
+
+################################################################################
+show ip route : 2019-11-27 20:28:33
+################################################################################
+
+
+
+
+VRF: default
+Codes: C - connected, S - static, K - kernel, 
+       O - OSPF, IA - OSPF inter area, E1 - OSPF external type 1,
+       E2 - OSPF external type 2, N1 - OSPF NSSA external type 1,
+       N2 - OSPF NSSA external type2, B I - iBGP, B E - eBGP,
+       R - RIP, I L1 - IS-IS level 1, I L2 - IS-IS level 2,
+       O3 - OSPFv3, A B - BGP Aggregate, A O - OSPF Summary,
+       NG - Nexthop Group Static Route, V - VXLAN Control Service,
+       DH - DHCP client installed default route, M - Martian,
+       DP - Dynamic Policy Route
+
+Gateway of last resort is not set
+
+ C      192.168.161.0/24 is directly connected, Management1
+
+! IP routing not enabled

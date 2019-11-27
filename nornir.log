@@ -1,0 +1,104 @@
+2019-11-27 20:24:39,640 -  nornir.core -     INFO -        run() - Running task 'check_commands' with args {} on 1 hosts
+2019-11-27 20:24:44,620 - nornir.core.task -    ERROR -      start() - Host 'vEOS1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/files/write_file.py", line 55, in write_file
+    with open(filename, mode=mode) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'output/vEOS1_device_checks.txt'
+
+2019-11-27 20:24:44,621 - nornir.core.task -    ERROR -      start() - Host 'vEOS1': task 'check_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "pre-post-change.py", line 44, in check_commands
+    append=True
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function write_file at 0x115f4a598> (failed)
+
+
+2019-11-27 20:25:22,650 -  nornir.core -     INFO -        run() - Running task 'check_commands' with args {} on 1 hosts
+2019-11-27 20:26:05,725 -  nornir.core -     INFO -        run() - Running task 'check_commands' with args {} on 1 hosts
+2019-11-27 20:28:20,776 -  nornir.core -     INFO -        run() - Running task 'check_commands' with args {} on 2 hosts
+2019-11-27 20:28:23,090 - nornir.core.task -    ERROR -      start() - Host 'vEOS3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/transport.py", line 1528, in auth_password
+    return self.auth_interactive(username, handler)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/transport.py", line 1633, in auth_interactive
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/netmiko/base_connection.py", line 884, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/client.py", line 446, in connect
+    passphrase,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/client.py", line 764, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/client.py", line 751, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/transport.py", line 1531, in auth_password
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/transport.py", line 1509, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/paramiko/auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.BadAuthenticationType: Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/netmiko/ssh_dispatcher.py", line 246, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/netmiko/base_connection.py", line 317, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/netmiko/base_connection.py", line 322, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/netmiko/base_connection.py", line 897, in establish_connection
+    raise NetMikoAuthenticationException(msg)
+netmiko.ssh_exception.NetMikoAuthenticationException: Authentication failure: unable to connect arista_eos 192.168.161.12:22
+Bad authentication type; allowed types: ['publickey', 'keyboard-interactive']
+
+2019-11-27 20:28:23,091 - nornir.core.task -    ERROR -      start() - Host 'vEOS3': task 'check_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "pre-post-change.py", line 35, in check_commands
+    out = task.run(task=netmiko_send_command, command_string=cmd)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x114240c80> (failed)
+
+
+2019-11-27 20:29:54,723 -  nornir.core -     INFO -        run() - Running task 'check_commands' with args {} on 2 hosts
+2019-11-27 20:29:54,728 - nornir.core.task -    ERROR -      start() - Host 'vEOS3': task 'check_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "pre-post-change.py", line 30, in check_commands
+    print(f"Pre/post checks from {task.hosts}")
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2019-11-27 20:29:54,729 - nornir.core.task -    ERROR -      start() - Host 'vEOS1': task 'check_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "pre-post-change.py", line 30, in check_commands
+    print(f"Pre/post checks from {task.hosts}")
+AttributeError: 'Task' object has no attribute 'hosts'
+
