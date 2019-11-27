@@ -1,5 +1,7 @@
 #Perform pre-change and post-change checks
 
+import difflib
+
 from datetime import datetime
 from nornir import InitNornir
 from nornir.core.filter import F 
@@ -46,6 +48,14 @@ def main():
     n = n.filter(platform="arista_eos")
     #Run the check_commands function
     n.run(task=check_commands)
+
+    #Open the pre and post change text files and store them in a variable called diff
+    with open("output/{task.host}_pre_change_checks.txt") as pre_check_file, open("output/{task.host}_post_change_checks.txt"):
+        diff = difflib.ndiff(pre_check_file.readlines(), post_check_file.readlines())
+    #Loop over the documents and store the changes in the below text file
+    with open ("post_change_diff.txt", "w") as result:
+        for output in diff:
+            result.write(output)
 
 if __name__== "__main__":
     main()
