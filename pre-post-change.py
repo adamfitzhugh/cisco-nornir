@@ -50,7 +50,8 @@ def main():
     #Filter Nornir by specifying device type
     n = n.filter(platform="arista_eos")
     #Run the check_commands function
-    n.run(task=check_commands)
+    res = n.run(task=check_commands)
+    print_result(res)
 
 if __name__== "__main__":
     main()
