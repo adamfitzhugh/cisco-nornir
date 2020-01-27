@@ -4,3 +4,7 @@ cisco:
   
 arista:
   platform: 'arista_eos'
+  connection_options:
+    netmiko:
+      extras:
+        secret: arista

@@ -1,0 +1,233 @@
+2020-01-27 10:27:28,539 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int bri'} on 2 hosts
+2020-01-27 10:27:33,617 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show running-config'} on 2 hosts
+2020-01-27 10:38:57,598 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int bri'} on 2 hosts
+2020-01-27 10:39:02,889 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show running-config'} on 2 hosts
+2020-01-27 10:44:53,221 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 10:44:53,236 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/base/__init__.py", line 105, in get_network_driver
+    install_name=name
+napalm.base.exceptions.ModuleImportError: Cannot import "arista_eos". Is the library installed?
+
+2020-01-27 10:44:53,237 - nornir.core.task -    ERROR -      start() - Host 'arista-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/base/__init__.py", line 105, in get_network_driver
+    install_name=name
+napalm.base.exceptions.ModuleImportError: Cannot import "arista_eos". Is the library installed?
+
+2020-01-27 10:44:53,237 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=networking.napalm_get, getters=["config"])
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10c8f47b8> (failed)
+
+
+2020-01-27 10:44:53,238 - nornir.core.task -    ERROR -      start() - Host 'arista-2': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=networking.napalm_get, getters=["config"])
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10c8f47b8> (failed)
+
+
+2020-01-27 10:46:55,339 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 10:46:55,344 - nornir.core.task -    ERROR -      start() - Host 'arista-2': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=netmiko_send_command,
+NameError: name 'netmiko_send_command' is not defined
+
+2020-01-27 10:46:55,345 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=netmiko_send_command,
+NameError: name 'netmiko_send_command' is not defined
+
+2020-01-27 10:47:43,649 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 10:47:43,657 - nornir.core.task -    ERROR -      start() - Host 'arista-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/base/__init__.py", line 105, in get_network_driver
+    install_name=name
+napalm.base.exceptions.ModuleImportError: Cannot import "arista_eos". Is the library installed?
+
+2020-01-27 10:47:43,657 - nornir.core.task -    ERROR -      start() - Host 'arista-2': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=networking.napalm_get, getters=["config"])
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10934c7b8> (failed)
+
+
+2020-01-27 10:47:43,658 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 49, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/base/__init__.py", line 105, in get_network_driver
+    install_name=name
+napalm.base.exceptions.ModuleImportError: Cannot import "arista_eos". Is the library installed?
+
+2020-01-27 10:47:43,658 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=networking.napalm_get, getters=["config"])
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10934c7b8> (failed)
+
+
+2020-01-27 10:51:00,570 -  nornir.core -  WARNING -        run() - Task 'Device Config Backup' has not been run – 0 hosts selected
+2020-01-27 10:51:45,608 -  nornir.core -  WARNING -        run() - Task 'Device Config Backup' has not been run – 0 hosts selected
+2020-01-27 10:52:54,801 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 10:52:54,989 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pyeapi/eapilib.py", line 385, in send
+    self.transport.endheaders(message_body=data)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1016, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 956, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1392, in connect
+    server_hostname=server_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 412, in wrap_socket
+    session=session
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 850, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 1108, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1045)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/eos/eos.py", line 164, in open
+    self.device.run_commands(["show clock"], encoding="text")
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pyeapi/client.py", line 730, in run_commands
+    response = self._connection.execute(commands, encoding, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pyeapi/eapilib.py", line 499, in execute
+    response = self.send(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pyeapi/eapilib.py", line 428, in send
+    raise ConnectionError(str(self), error_msg)
+pyeapi.eapilib.ConnectionError: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1045)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/napalm/eos/eos.py", line 169, in open
+    raise ConnectionException(py23_compat.text_type(ce))
+napalm.base.exceptions.ConnectionException: Socket error during eAPI connection: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1045)
+
+2020-01-27 10:52:54,989 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 10, in backup_config
+    task=networking.napalm_get, getters=["config"])
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function napalm_get at 0x10f6c37b8> (failed)
+
+
+2020-01-27 11:11:56,553 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 11:51:29,805 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 11:52:18,288 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 11:58:59,697 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 12:02:29,908 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 12:02:55,236 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 12:03:22,670 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 12:04:43,625 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 2 hosts
+2020-01-27 12:04:57,363 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 12:10:14,113 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 12:14:36,143 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 12:16:33,400 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
+2020-01-27 12:16:33,413 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/plugins/tasks/networking/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 293, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 227, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/inventory.py", line 265, in _get_connection_options_recursively
+    sp = self.defaults.connection_options.get(connection, None)
+AttributeError: 'ConnectionOptions' object has no attribute 'get'
+
+2020-01-27 12:16:33,415 - nornir.core.task -    ERROR -      start() - Host 'arista-1': task 'Device Config Backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "bgp.py", line 12, in backup_config
+    command_string="show running-config"
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_command at 0x1079379d8> (failed)
+
+
+2020-01-27 12:20:33,292 -  nornir.core -     INFO -        run() - Running task 'Device Config Backup' with args {'name': 'Device Config Backup', 'path': '/Users/fitzadd/Documents/NetDevOps/GitHub/nornir/output'} on 1 hosts
